@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>My Page</title>
+    <th:block th:replace="client/fragments/header :: header"></th:block>
+
+</head>
+<body>
+
+    <div>
+        <form action="">
+            <input type="text" name="userId" placeholder="아이디">
+            <input type="text" name="userPw" placeholder="비밀번호">
+            <input type="submit" value="로그인">
+        </form>
+        <button type="button" onclick="location.href='/join'">회원가입</button>
+        <button type="button" onclick="location.href='/findId'">아이디찾기</button>
+        <button type="button" onclick="location.href='/findPw'">비밀번호찾기</button>
+    </div>
+
+
+
+
+
+<th:block th:replace="client/fragments/footer :: footer"></th:block>
+</body>
+</html>
