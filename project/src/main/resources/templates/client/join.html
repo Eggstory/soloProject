@@ -9,15 +9,40 @@
 <body>
 
     <div>
-        <form action="">
-            <input type="text" name="userId" placeholder="아이디">
-            <input type="text" name="userPw" placeholder="비밀번호">
-            <input type="submit" value="로그인">
+        <form method="post">
+            <input type="text" name="memberId" id="memberId" placeholder="아이디">
+            <input type="text" name="memberPw" id="memberPw" placeholder="비밀번호">
+            <input type="button" value="회원가입" onclick="joinAction()">
         </form>
-        <button type="button" onclick="location.href='/join'">회원가입</button>
-        <button type="button" onclick="location.href='/findId'">아이디찾기</button>
-        <button type="button" onclick="location.href='/findPw'">비밀번호찾기</button>
     </div>
+
+    <script>
+
+        function joinAction() {
+          var id = $("#memberId").val();
+          var pw = $("#memberPw").val();
+
+          var data = {
+            memberId: id,
+            memberPw: pw
+          };
+
+          $.ajax({
+            type: "POST",
+            url: "/joinAction",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=UTF-8",
+            dataType: "json",
+            success: function(result) {
+              alert("회원가입에 성공했습니다.");
+              console.log(result);
+            },
+            error: function(xhr, status, error) {
+            }
+          });
+        }
+
+    </script>
 
 
 
