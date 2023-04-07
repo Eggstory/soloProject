@@ -22,7 +22,8 @@ public class MemberController {
 
         service.memberSave(dto);
 
-        return "<script>alert('회원가입 성공!'); location.href='/main';</script>";
+        // @ResponseBody 쓸때 리턴값에 뭐라도 넣어주기 (빈값안됨)
+        return "";
 
     }
 

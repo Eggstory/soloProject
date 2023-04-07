@@ -33,8 +33,9 @@
             data: JSON.stringify(data),
             contentType: "application/json; charset=UTF-8",
             dataType: "json",
-            success: function(result) {
+            success: function() {
               alert("회원가입에 성공했습니다.");
+              location.href="/";
               console.log(result);
             },
             error: function(xhr, status, error) {
